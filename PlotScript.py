@@ -72,7 +72,7 @@ def SimulCARS():
         Chi3_NR = (MaxNRB-MinNRB)*((Chi3_NR-np.min(Chi3_NR))/(np.max(Chi3_NR)-np.min(Chi3_NR))) + MinNRB
     
     # Simulating Stokes Spectrum
-    choiceList = [1,2,3,4] # randomly choose between long gaussian or sigmoidal function
+    choiceList = [1,2] # randomly choose between long gaussian or sigmoidal function
     choice = random.choice(choiceList)
     if choice == 1: # sigmoidal Stokes intensity
         bs = np.random.normal(3,5,2)
@@ -87,8 +87,6 @@ def SimulCARS():
         mu = np.random.uniform(0,1)
         sig = np.random.randint(500,1500)
         I_S = np.abs(np.exp(-np.power(x - mu, 2.) / (2 * np.power(sig, 2.))))
-    else:
-    	I_S = 1
     
     # Simulating CARS
     Chi3 = Chi3_R + Chi3_NR
