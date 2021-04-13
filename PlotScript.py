@@ -92,7 +92,7 @@ def SimulCARS():
     Chi3 = Chi3_R + Chi3_NR
     noise = np.random.randn(n_points) * sigma # adding noise to the spectra with standard deivation sigma
     cars = (np.abs(Chi3)**2)*I_S + noise
-    return cars, Chi3_R.imag, Chi3_R.real, Chi3_NR
+    return cars, Chi3_R.imag, Chi3.real, Chi3_NR
 
 def generateSpectra(size = 10000):
     cars = np.empty((size, n_points,1))
